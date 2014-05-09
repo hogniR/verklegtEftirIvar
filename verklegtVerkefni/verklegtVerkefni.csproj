@@ -169,6 +169,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\DataContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\logIn.cs" />
     <Compile Include="Models\newRequestDTO.cs" />
     <Compile Include="Models\Requests.cs" />
     <Compile Include="Models\users.cs" />

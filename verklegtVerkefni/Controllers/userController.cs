@@ -13,8 +13,7 @@ namespace verklegtVerkefni.Controllers
         userRepository repository = new userRepository();
         public ActionResult logIn()
         {
-
-            return View();
+            return View(new logIn());
         }
         public ActionResult register()
         {
