@@ -169,7 +169,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\DataContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\newRequestDTO.cs" />
+    <Compile Include="Models\logIn.cs" />
     <Compile Include="Models\Requests.cs" />
     <Compile Include="Models\users.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
@@ -287,6 +287,8 @@
     <Content Include="Views\requests\newRequest.cshtml" />
     <Content Include="Views\requests\viewRequest.cshtml" />
     <Content Include="Views\user\register.cshtml" />
+    <Content Include="Views\user\logIn.cshtml" />
+    <Content Include="Views\user\loggedIn.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -16,6 +16,25 @@ namespace verklegtVerkefni.RepoClasses
             save();
             return;
         }
+        public users getUserByName(string name)
+        {
+            var result = (from s in m_db.users
+                          where s.userName == name
+                          select s).SingleOrDefault();
+            return result;
+        }
+        public users getUserById(int id)
+        {
+            var result = (from s in m_db.users
+                          where s.id == id
+                          select s).SingleOrDefault();
+
+            return result;
+        }
+        public IEnumerable<users> getAllUsers()
+        {
+            return m_db.users;
+        }
         public void save()
         {
             m_db.SaveChanges();
