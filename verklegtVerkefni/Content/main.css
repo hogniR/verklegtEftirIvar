@@ -1,0 +1,95 @@
+﻿body
+{
+	margin-right:5%;
+	margin-left:5%;
+	margin-top: 50px;
+    margin-bottom: 50px;
+	border:solid 2px black;
+}
+#logo
+{
+	margin:50px;
+	clear:both;
+}
+#header
+{
+	text-align: center;
+	font-size: 30px;
+}
+
+#header a
+{
+	text-decoration:none;
+	color:black;
+}
+
+#logIn
+{
+	float:right;
+	margin-right: 20px;
+	margin-top: -185px;
+	border-collapse:collapse;
+    font-size:20px;
+}
+
+#mainContent
+{
+	margin-top: 40px;
+	font-size: 16px;
+    text-align:center;
+    clear:both;
+
+}
+#requestTable
+{
+    margin-left:200px;
+    width:60%;
+}
+th
+{
+    text-align:center;
+}
+
+.popular
+{
+    margin-top:-360px;
+}
+h4
+{
+    
+}
+/*#nextPrevButton {
+     background-color:blue;
+     padding: 5px 10px 5px 10px;
+     text-align: center;
+     font-weight: bold;
+     color: #fff;
+     text-decoration: none; border: 1px inset #aaa;
+     -webkit-border-radius: 8px; width: auto; -moz-border-radius: 8px;  -khtml-border-radius: 8px;  border-radius: 8px;
+     -moz-box-shadow: 1px 1px 1px #666;  -webkit-box-shadow: 1px 1px 1px #666;  box-shadow: 1px 1px 1px #666;
+     text-shadow: rgba(0,0,0, .5) 0px -1px 0px;
+      border-top: inset 1px #ccc; border-left: inset 1px #ccc; border-bottom: solid 1px solid #000; border-right: 1px solid #666;
+     margin-top: 20px;
+     margin-right:500px;
+	margin-left: 500px;
+    font-size:16px;
+    border-collapse:collapse;
+}*/
+
+/*#nextPrevButton:hover  {
+     background: #999;
+     text-shadow: rgba(0,0,0, .5) 0px 1px 0px;
+}*/
+#Ad2,
+#Ad1,
+#Ad3
+{
+	border:solid 2px black;
+    padding:60px;
+    margin-bottom:10px;
+}
+#Ads
+{
+    float:right;
+    margin-top:-320px;
+}
