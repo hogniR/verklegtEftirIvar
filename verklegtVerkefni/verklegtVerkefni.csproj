@@ -286,14 +286,11 @@
     <Content Include="Views\requests\newRequest.cshtml" />
     <Content Include="Views\requests\viewRequest.cshtml" />
     <Content Include="Views\user\register.cshtml" />
-<<<<<<< HEAD
     <Content Include="Views\user\logIn.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-=======
     <Content Include="Views\Home\instructions.cshtml" />
     <Content Include="Views\information.cshtml" />
->>>>>>> nyttHtml
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
