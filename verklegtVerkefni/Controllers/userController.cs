@@ -22,12 +22,10 @@ namespace verklegtVerkefni.Controllers
             var user = repository.getUserByName(info.userName);
             if(user != null)
             {
-                var pw = (from pw in repository.getAllUsers()
-                          where password.userName == info.userName
-                          select password.password).SingleOrDefault();
-               varresult = (from request in repository.getAllRequests()
-                            orderby request.dateOfPost descending
-                            select request).Take(10);
+                var userWithPw = (from usr in repository.getAllUsers()
+                                  where usr.password == info.password
+                                  select usr).SingleOrDefault();
+
             }
             else
             {

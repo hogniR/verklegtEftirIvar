@@ -288,7 +288,6 @@
     <Content Include="Views\requests\viewRequest.cshtml" />
     <Content Include="Views\user\register.cshtml" />
     <Content Include="Views\user\logIn.cshtml" />
-    <Content Include="Views\user\loggedIn.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
