@@ -5,19 +5,56 @@
 	margin-top: 50px;
     margin-bottom: 50px;
 	border:solid 2px black;
+    background: linear-gradient(#ffffff, #e6e6e6);
+}
+.left
+{
+    float:left;
+    width:19%;
+    clear:both;
+    margin-top:240px;
+    font-size:18px;
+    margin-left:30px;
+}
+#test
+{
+    color:red;
+}
+#searchBox
+{
+    margin-bottom:20px;
+}
+.middle
+{
+    float: left;
+    padding-left:350px;
+    padding-top:100px;
+    font-size:30px;
+}
+
+.right
+{
+    float:right;
+    width:19%;
+    margin-top:-100px;
 }
 #logo
 {
 	margin:50px;
 	clear:both;
 }
-#header
+#navigation
 {
-	text-align: center;
-	font-size: 30px;
+    text-align:center;
 }
-
-#header a
+#navigation li
+{
+    display:inline;
+    text-decoration:none;
+    font-size:30px;
+    margin-left:10px;
+}
+#navigation a
 {
 	text-decoration:none;
 	color:black;
@@ -31,19 +68,14 @@
 	border-collapse:collapse;
     font-size:20px;
 }
-
 #mainContent
 {
-	margin-top: 40px;
-	font-size: 16px;
-    text-align:center;
-    clear:both;
-
+    background-color:white;
+    border:solid 1px red;
 }
 #requestTable
 {
-    margin-left:200px;
-    width:60%;
+    width:90%;
 }
 th
 {
@@ -53,10 +85,11 @@ th
 .popular
 {
     margin-top:-360px;
+    padding-bottom:20px;
 }
 h4
 {
-    
+    font-size:22px;
 }
 /*#nextPrevButton {
      background-color:blue;
@@ -87,9 +120,4 @@ h4
 	border:solid 2px black;
     padding:60px;
     margin-bottom:10px;
-}
-#Ads
-{
-    float:right;
-    margin-top:-320px;
 }

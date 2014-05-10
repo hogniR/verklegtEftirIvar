@@ -287,6 +287,8 @@
     <Content Include="Views\requests\newRequest.cshtml" />
     <Content Include="Views\requests\viewRequest.cshtml" />
     <Content Include="Views\user\register.cshtml" />
+    <Content Include="Views\Home\instructions.cshtml" />
+    <Content Include="Views\information.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

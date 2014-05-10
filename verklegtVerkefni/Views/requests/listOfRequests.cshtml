@@ -3,11 +3,12 @@
 @{
     ViewBag.Title = "listOfRequests";
 }
-
-<html lang="is">
+<!--Listi af beiðnum-->
+<!DOCTYPE html>
+<html>
     <head>
         <title>textit</title>
-        <link rel="stylesheet" type="text/css" href="~/Content/main.css" />
+        <link href="./Content/main.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
         <div id="logo">
@@ -15,8 +16,8 @@
         </div>
 
         <div id="header">
-            <a href="#" id="index">@Html.ActionLink("Forsíða", "Index", "Home")</a> | <a href="#">@Html.ActionLink("Beiðnir", "listOfRequests", "requests")</a> |
-            <a href="#">Leidbeiningar</a> | <a href="#">Hafa samband </a>
+            @Html.ActionLink("Forsíða", "Index", "Home") | @Html.ActionLink("Beiðnir", "listOfRequests", "requests") |
+            @Html.ActionLink("Leiðbeiningar", "instructions", "Home") | <a href="#">Hafa samband </a>
         </div>
 
         <div id="logIn">
@@ -26,7 +27,6 @@
                 <option value="logOut">Skra ut</option>
             </select>
         </div>
-
         <div id="mainContent">
             <table id="requestTable">
                 <thead>
@@ -37,13 +37,13 @@
                         <th>Dagsetning</th>
                     </tr>
                 </thead>
-                    <tbody>
-                        @foreach(var request in Model)
-                        {
+                <tbody>
+                    @foreach (var request in Model)
+                    {
                         <tr>
-                            <td>
+                            <td>s
                                 <select name="statusOnRequest">
-                                    <option value="unfinished">olokid</option>
+                                    <option value="unfinished">Olokid</option>
                                     <option value="inProgress">I vinnslu</option>
                                     <option value="finished">Lokid</option>
                                 </select>
@@ -58,19 +58,18 @@
                                 @request.dateOfPost
                             </td>
                         </tr>
-                        }
-                     </tbody>
-             </table>
+                    }
+                </tbody>
+            </table>
             <form action="@Html.ActionLink("newRequests", "newRequest", "requests")">
                 <input type="button" id="sendNewRequest" value="Senda inn nyja beidni" />
             </form>
-            </div>
-
+        </div>
         <div id="prevNextButtons">
             <p id="nextPrevButton"><a href="#">&gt</a><p>
             <p id="nextPrevButton"><a href="#">&lt</a><p>
         </div>
-
+        <p id="test">þetta er test</p>
         <div class="popular">
             <h4> Vinsaelast </h4>
             <ul id="listOfPopular">
