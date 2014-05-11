@@ -44,5 +44,13 @@ namespace verklegtVerkefni.Controllers
             }
             return View("Error");
         }
+        public ActionResult popular()
+        {
+            DataContext db = new DataContext();
+            IEnumerable<Requests> result = (from request in repository.getAllRequests()
+                                            orderby request.likes descending
+                                            select request).Take(10);
+            return View(result);
+        }
 	}
 }

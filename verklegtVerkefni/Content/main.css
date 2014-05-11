@@ -10,14 +10,20 @@
 {
     float:left;
     width:19%;
-    margin-top:340px;
+    margin-top:380px;
     font-size:18px;
     margin-left:100px;
+}
+.right
+{
+    margin-top:40px;
+    float:right;
+    width:19%;
 }
 .middleRequest
 {
     margin-left:260px;
-    margin-top:-650px;
+    margin-top:-620px;
     width:70%;
 }
 
@@ -31,7 +37,6 @@
 }
 .middleMain
 {
-    float: left;
     margin-top:-700px;
     padding-left:350px;
     padding-top:120px;
@@ -39,15 +44,36 @@
 }
 .middleNewRequest
 {
-    line-height:200%;
+    margin-left:310px;
+    margin-top:-650px;
+    width:100%;
+}
+.middleLogIn
+{
     margin-left:100px;
     margin-top:-650px;
-    padding-left:250px;
+    padding-left:180px;
 }
-.right
+.middleChangePassword
 {
-    float:right;
-    width:19%;
+    margin-left:280px;
+    margin-top:-660px;
+    width:100%;
+    position:absolute;
+}
+.middleRegister
+{
+    margin-left:280px;
+    margin-top:-650px;
+    width:100%;
+}
+#headerLogIn
+{
+    margin-bottom:20px;
+}
+.text-box single-line
+{
+    width:100%;
 }
 #logo
 {
@@ -58,6 +84,7 @@
 #navigation
 {
     text-align:center;
+    margin-top:-90px;
 }
 #navigation li
 {
@@ -95,7 +122,7 @@
 }
 th
 {
-    text-align:center;
+ 
 }
 
 .popular 
