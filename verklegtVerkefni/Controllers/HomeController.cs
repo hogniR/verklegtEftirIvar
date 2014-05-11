@@ -21,6 +21,13 @@ namespace verklegtVerkefni.Controllers
         {
             return View();
         }
-
+        public ActionResult instructions()
+        {
+            return View();
+        }
+        public ActionResult information()
+        {
+            return View();
+        }
     }
 }

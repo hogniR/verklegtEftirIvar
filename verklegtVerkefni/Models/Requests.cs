@@ -13,6 +13,7 @@ namespace verklegtVerkefni.Models
         public string language { get; set; }
         public DateTime dateOfPost { get; set; }
         public int likes { get; set; }
+        public int status { get; set; }
         public Requests()
         {
             dateOfPost = DateTime.Now;

@@ -10,38 +10,50 @@
 {
     float:left;
     width:19%;
-    clear:both;
-    margin-top:240px;
+    margin-top:340px;
     font-size:18px;
-    margin-left:30px;
+    margin-left:100px;
 }
-#test
+.middleRequest
 {
-    color:red;
+    margin-left:260px;
+    margin-top:-650px;
+    width:70%;
+}
+
+#requestTable
+{
+    width:70%;
 }
 #searchBox
 {
     margin-bottom:20px;
 }
-.middle
+.middleMain
 {
     float: left;
+    margin-top:-700px;
     padding-left:350px;
     padding-top:120px;
     font-size:30px;
 }
-
+.middleNewRequest
+{
+    line-height:200%;
+    margin-left:100px;
+    margin-top:-650px;
+    padding-left:250px;
+}
 .right
 {
     float:right;
     width:19%;
-    margin-top:-100px;
-
 }
 #logo
 {
 	margin:50px;
 	clear:both;
+    padding-top:20px;
 }
 #navigation
 {
@@ -66,22 +78,20 @@
 
 #logIn
 {
-	float:right;
-	margin-right: 20px;
-	margin-top: -185px;
-	border-collapse:collapse;
-    font-size:20px;
+    margin-top:-220px;
+    float:right;
 }
 #mainContent
 {
     background-color:white;
+    margin-top:-80px;
     padding-bottom:700px;
     padding-right:100px;
-
-}
-#requestTable
-{
-    width:90%;
+    border:solid 1px #e1e1e1;
+    border-radius:3px;
+    box-shadow:0 0 4px #d6d6d6;
+    width:1300px;
+    max-width:100%;
 }
 th
 {
@@ -99,6 +109,7 @@ th
     list-style-type:none;
     text-decoration:none;
     margin-left:-30px;
+    font-size:14px;
 }
 .popular a
 {
@@ -111,15 +122,18 @@ th
 #seeMorePopular
 {
     margin-top:10px;
+    padding-left:15px;
 }
 #seeMoreNewContent
 {
     margin-top:10px;
+    padding-left:15px;
 }
 .newContent li
 {
     list-style-type:none;
     margin-left:-30px;
+    font-size:14px;
 }
 h4
 {

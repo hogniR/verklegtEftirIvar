@@ -3,31 +3,70 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="~/Content/main.css" media="screen, projection" />
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", null, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("newRequests", "newRequest", "requests")</li>
+    <div id="mainContent">
+        <div id="logo">
+            <a href="#"><img src="~/images/hipsterLogo.png"></a>
+        </div>
+        <div id="logIn">
+            @Html.Partial("_logInPartial")
+        </div>
+        <div id="header">
+            <div id="navigation">
+                <ul>
+                    <li>@Html.ActionLink("Forsíða", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Beiðnir", "listOfRequests", "requests")</li>
+                    <li>@Html.ActionLink("Leiðbeiningar", "instructions", "Home")</li>
+                    <li>@Html.ActionLink("Hafa samband", "information", "Home")</li>
                 </ul>
-                @Html.Partial("_logInPartial")
             </div>
         </div>
+
+        <div class="left">
+            <div class="popular">
+                <h4> Vinsælast </h4>
+                <ul id="listOfPopular">
+                    <li><a href="#">Textaskrá 1</a></li>
+                    <li><a href="#">Textaskrá 2</a></li>
+                    <li><a href="#">Textaskrá 3</a></li>
+                    <li><a href="#">Textaskrá 4</a></li>
+                    <li><a href="#">Textaskrá 5</a></li>
+                    <li id="seeMorePopular"><a href="#">Sjá meira</a></li>
+                </ul>
+            </div>
+
+            <div class="newContent">
+                <h4> Nýjasta efni </h4>
+                <ul id="listOfNewContent">
+                    <li><a href="#">Textaskrá 1</a></li>
+                    <li><a href="#">Textaskrá 2</a></li>
+                    <li><a href="#">Textaskrá 3</a></li>
+                    <li><a href="#">Textaskrá 4</a></li>
+                    <li><a href="#">Textaskrá 5</a></li>
+                    <li id="seeMoreNewContent"><a href="#">Sjá meira</a></li>
+                </ul>
+            </div>
+        </div> <!--Left content lokast-->
+
+        <div class="right">
+            <div id="Ads">
+                <div id="Ad1">
+                    <p> Auglýsing 1 </p>
+                </div>
+                <div id="Ad2">
+                    <p> Auglýsing 2 </p>
+                </div>
+                <div id="Ad3">
+                    <p> Auglýsing 3 </p>
+                </div>
+            </div>
+        </div><!--right content lokast-->
     </div>
     <div class="container body-content">
         @RenderBody()
