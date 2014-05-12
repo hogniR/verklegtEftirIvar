@@ -1,6 +1,6 @@
-Þetta er test textaskrá
-Hér myndi koma texti fyrir bíómynd og fleira
+Thetta er test textaskra
+Her myndi koma texti fyrir biomynd og fleira
 
 1
 00:00:01.000 --> 00:00:05.000
-Hér kæmi texti
+Her kaemi texti
