@@ -24,21 +24,36 @@ namespace verklegtVerkefni.Controllers
             string content = null;
             if(uploadFile.ContentLength > 0)
             {
+                
                 using (StreamReader sr = new StreamReader(uploadFile.InputStream))
                 {
                     string line;
 
                     while ((line = sr.ReadLine()) != null)
                     {
-                        content += line;
-                        //content += '\n';
+                        content += line + "@";
                     }
                 }
                 infoForFile.content = content;
                 repository.addNewFile(infoForFile);
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                return RedirectToAction("Error");
             }
             
-            return RedirectToAction("Index", "Home");
+            
+        }
+        public FileStreamResult downloadFile(int? id)
+        {
+            var fileToDownload = repository.getFileById(16);
+            var content = fileToDownload.content;
+            content = content.Replace("@", System.Environment.NewLine);
+            var byteArray = Encoding.ASCII.GetBytes(content);
+            var stream = new MemoryStream(byteArray);
+
+            return File(stream, "text/plain", fileToDownload.name + ".txt");
         }
     }
 }
