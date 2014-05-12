@@ -1123,7 +1123,7 @@ pre code {
     width: 75%;
   }
   .col-md-10 {
-    width: 83.33333333333334%;
+    width: 100%;
   }
   .col-md-11 {
     width: 91.66666666666666%;
@@ -1753,7 +1753,7 @@ textarea.form-control {
 }
 
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 40px;
 }
 
 .radio,
