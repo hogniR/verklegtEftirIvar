@@ -10,5 +10,6 @@ namespace verklegtVerkefni.Models
     {
         public DbSet<Requests> requests { get; set; }
         public DbSet<users> users { get; set; }
+        public DbSet<files> files { get; set; }
     }
 }
