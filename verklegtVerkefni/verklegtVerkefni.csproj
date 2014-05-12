@@ -159,6 +159,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\fileController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\requestsController.cs" />
     <Compile Include="Controllers\userController.cs" />
@@ -168,6 +169,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\DataContext.cs" />
+    <Compile Include="Models\files.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\logIn.cs" />
     <Compile Include="Models\Requests.cs" />
@@ -176,6 +178,7 @@
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepoClasses\filesRepository.cs" />
     <Compile Include="RepoClasses\requestsRepository.cs" />
     <Compile Include="RepoClasses\userRepository.cs" />
     <Compile Include="Startup.cs" />
@@ -260,7 +263,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -288,6 +293,7 @@
     <Content Include="Views\user\logIn.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\file\uploadFile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

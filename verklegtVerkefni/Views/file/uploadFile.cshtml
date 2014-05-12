@@ -1,0 +1,76 @@
+﻿@model verklegtVerkefni.Models.files
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>uploadFile</title>
+</head>
+<body>
+    @using (Html.BeginForm("uploadFile", "file", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+        
+        
+        <div class="form-horizontal">
+            <h4>files</h4>
+            <hr />
+            @Html.ValidationSummary(true)
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.name, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.name)
+                    @Html.ValidationMessageFor(model => model.name)
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.series, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.series)
+                    @Html.ValidationMessageFor(model => model.series)
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.episode, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.episode)
+                    @Html.ValidationMessageFor(model => model.episode)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.language, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.language)
+                    @Html.ValidationMessageFor(model => model.language)
+                </div>
+            </div>
+    
+            <div class="form-group">
+                
+                <div class="col-md-10">
+                    <input type="file" name="uploadFile" id="uploadFile" />
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+         </div>
+    }
+    
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</body>
+</html>
