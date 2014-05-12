@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<!--forsida-->
+<!DOCTYPE html>
+<html lang="is">
+<head>
+    <title>textit</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/main.css" media="screen, projection" />
+    <script src="JavaScript.js"></script>
+</head>
+<body>
+    
+
+        <div class="middleMain">
+            <form method="get">
+                <input type="search" id="searchBox" name="searchBox" placeholder="Leita..." />
+                <input type="submit" value="Leita" />
+            </form>
+            @Html.ActionLink("Upphala nýrri skrá", "uploadFile", "file")
+        </div> <!--middle content lokast-->
+
+</body>
+</html>
