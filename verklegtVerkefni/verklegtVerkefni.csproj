@@ -163,7 +163,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\popularController.cs" />
     <Compile Include="Controllers\requestsController.cs" />
-    <Compile Include="Controllers\userController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -181,7 +180,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepoClasses\filesRepository.cs" />
     <Compile Include="RepoClasses\requestsRepository.cs" />
-    <Compile Include="RepoClasses\userRepository.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -289,8 +287,6 @@
     <Content Include="Views\requests\listOfRequests.cshtml" />
     <Content Include="Views\requests\newRequest.cshtml" />
     <Content Include="Views\requests\viewRequest.cshtml" />
-    <Content Include="Views\user\register.cshtml" />
-    <Content Include="Views\user\logIn.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\instructions.cshtml" />
