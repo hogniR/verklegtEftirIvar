@@ -10,47 +10,49 @@
         <link rel="stylesheet" type="text/css" href="~/Content/main.css" media="screen, projection" />
     </head>
     <body>
-        <div class="middleNewRequest">
-            <h2 class="newRequestHeader">Senda inn nýja beiðni</h2>
-            @Html.ValidationSummary(true)
+        @Html.BeginForm(){
+        
+            <div class="middleNewRequest">
+                <h2 class="newRequestHeader">Senda inn nýja beiðni</h2>
+                @Html.ValidationSummary(true)
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.name, new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.name)
-                    @Html.ValidationMessageFor(model => model.name)
-                </div>
-            </div>
                 <div class="form-group">
-                    @Html.LabelFor(model => model.comment, new { @class = "control-label col-md-2" })
+                    @Html.LabelFor(model => model.name, new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @Html.TextBoxFor(model => model.comment)
-                        @Html.ValidationMessageFor(model => model.comment)
+                        @Html.EditorFor(model => model.name)
+                        @Html.ValidationMessageFor(model => model.name)
+                    </div>
+                </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.comment, new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(model => model.comment)
+                            @Html.ValidationMessageFor(model => model.comment)
+                        </div>
+                    </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.language, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.language)
+                        @Html.ValidationMessageFor(model => model.language)
                     </div>
                 </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.language, new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.language)
-                    @Html.ValidationMessageFor(model => model.language)
+                <div class="form-group">
+                    @Html.LabelFor(model => model.dateOfPost, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.dateOfPost)
+                        @Html.ValidationMessageFor(model => model.dateOfPost)
+                    </div>
                 </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.dateOfPost, new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.dateOfPost)
-                    @Html.ValidationMessageFor(model => model.dateOfPost)
+            
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-default" />
+                    </div>
                 </div>
-            </div>
-
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Create" class="btn btn-default" />
-                </div>
-            </div>
-
+            }
             <div class="backNewRequest">
                 @Html.ActionLink("Til baka", "listOfRequests", "requests")
             </div>

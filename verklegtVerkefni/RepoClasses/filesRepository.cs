@@ -23,6 +23,10 @@ namespace verklegtVerkefni.RepoClasses
 
             return result;
         }
+        public IEnumerable<files> getAllFiles()
+        {
+            return m_db.files;
+        }
         public void save()
         {
             m_db.SaveChanges();

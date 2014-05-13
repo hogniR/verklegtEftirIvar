@@ -1,4 +1,6 @@
-﻿@{
+﻿@model verklegtVerkefni.Models.search
+
+@{
     ViewBag.Title = "Home Page";
 }
 <!--forsida-->
@@ -11,13 +13,16 @@
 </head>
 <body>
 
-        <div class="middleMain">
-            <form method="get">
-                <input type="search" id="searchBox" name="searchBox" placeholder="Leita..." />
-                <input type="submit" value="Leita" />
-            </form>
-            @Html.ActionLink("Upphala nýrri skrá", "uploadFile", "file")
-        </div> <!--middle content lokast-->
+<div class="middleMain">
+    @Html.BeginForm("searchResults", "file")
+    {   
+        @Html.LabelFor(model => model.searchTerms, new { @class = "control-label col-md-2" })
+        @Html.EditorFor(model => model.searchTerms)
+        <!--<input type="search" id="searchBox" name="searchBox" placeholder="Leita..." />-->
+        <input type="submit" value="Leita" />
+    }
+    @Html.ActionLink("Upphala nýrri skrá", "uploadFile", "file")
+</div> <!--middle content lokast-->
 
 </body>
 </html>

@@ -1,0 +1,54 @@
+﻿@model IEnumerable<verklegtVerkefni.Models.files>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>searchResults</title>
+</head>
+<body>
+    <table id="requestTable">
+        <thead>
+            <tr>
+                <th>Stada</th>
+                <th>Beidnir</th>
+                <th>Likes</th>
+                <th>Dagsetning</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var files in Model)
+            {
+                <tr>
+                    <td>
+                        <div id="request">@files.name</div>
+                    </td>
+
+                        @if (files.episode != 0)
+                        {
+                            <td>
+                                @files.series;
+                            </td>
+                            <td>
+                                @files.episode;
+                            </td>
+                        }
+                        <td>
+                            @files.language
+                        </td>
+
+                        <td>
+                            @files.likes
+                        </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</body>
+</html>

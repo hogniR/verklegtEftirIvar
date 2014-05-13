@@ -55,5 +55,14 @@ namespace verklegtVerkefni.Controllers
 
             return File(stream, "text/plain", fileToDownload.name + ".txt");
         }
+        public ActionResult searchResults(FormCollection form)
+        {
+            search newItem = new search();
+            UpdateModel(newItem);
+            IEnumerable<files> result = (from s in repository.getAllFiles()
+                                          where s.name.StartsWith(newItem.searchTerms)
+                                          select s);
+            return View(result);
+        }
     }
 }

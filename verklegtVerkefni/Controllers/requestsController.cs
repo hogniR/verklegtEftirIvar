@@ -23,12 +23,11 @@ namespace verklegtVerkefni.Controllers
             UpdateModel(newItem);
             repository.addNewRequest(newItem);
             repository.save();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("listOfRequests", "requests");
         }
 
         public ActionResult listOfRequests()
         {
-            DataContext db = new DataContext();
             IEnumerable<Requests> result = (from request in repository.getAllRequests()
                                             orderby request.dateOfPost descending
                                             select request).Take(10);
