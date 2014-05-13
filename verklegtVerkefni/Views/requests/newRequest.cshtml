@@ -11,11 +11,9 @@
     </head>
     <body>
         @Html.BeginForm(){
-        
-            <div class="middleNewRequest">
-                <h2 class="newRequestHeader">Senda inn nýja beiðni</h2>
-                @Html.ValidationSummary(true)
-
+        <div class="middleNewRequest">
+            <h2>Senda inn nýja beiðni</h2>
+            @Html.ValidationSummary(true)
                 <div class="form-group">
                     @Html.LabelFor(model => model.name, new { @class = "control-label col-md-2" })
                     <div class="col-md-10">

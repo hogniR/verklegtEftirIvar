@@ -44,7 +44,7 @@
 .middleRequest
 {
     margin-left:260px;
-    padding-top:60px;
+    padding-top:50px;
     width:80%;
 }
 .middleInstruction 
@@ -67,26 +67,35 @@
 }
 .middleNewRequest
 {
-    width:100%;
     margin-left:100px;
-    padding-left:180px;
+    padding-left:240px;
+    padding-top:50px;
+}
+.middleViewRequest
+{
+    width:60%;
+    padding-top:10px;
+    float:left;
 }
 .middleLogIn
 {
     padding-top:40px;
     margin-left:100px;
     padding-left:180px;
+    width:100%;
 }
 .middleChangePassword
 {
     margin-left:280px;
+    padding-top:22px;
     width:100%;
     position:absolute;
 }
 .middleRegister
 {
-    margin-left:280px;
-    width:100%;
+    width:60%;
+    padding-top:10px;
+    float:left;
 }
 .newRequestLink
 {
