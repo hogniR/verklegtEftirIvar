@@ -12,7 +12,7 @@
 <body>
     <div id="mainContent">
         <div id="logo">
-            <a href="#"> <img src="~/images/hipsterLogo.png"></a>
+            @Html.ActionLink(" ", "Index", "Home", null, new{ style = "background: url('" + Url.Content("~/images/hipsterLogo.png") + "') no-repeat center right; display:block; height:200px; width:20%;"})
         </div>
         <div id="logIn">
             @Html.Partial("_logInPartial")
@@ -53,25 +53,29 @@
                 </ul>
             </div>
         </div> <!--Left content lokast-->
-
+        <div class="container body-content">
+            @RenderBody()
+        </div>
         <div class="right">
             <div id="Ads">
                 <div id="Ad1">
-                    <p> Auglýsing 1 </p>
+                    <img src="~/images/netflix.jpg" alt="ad1" width="200" height="200" /> 
                 </div>
                 <div id="Ad2">
-                    <p> Auglýsing 2 </p>
+                    <img src="~/images/Sena.JPG" alt="ad2" width="200" height="200" /> 
                 </div>
                 <div id="Ad3">
-                    <p> Auglýsing 3 </p>
+                    <img src="~/images/subway.jpg" alt="ad3" width="200" height="200" /> 
                 </div>
             </div>
         </div><!--right content lokast-->
     </div>
-    <div class="container body-content">
-        @RenderBody()
-    </div>
-
+    <footer class="footerMain">
+        <p>Aðalgata 1, 101 Reykjavík</p>
+        <p>texit@textit.is</p>
+        <p>555-5555</p>
+        <p>kt. 123456-7899</p>
+    </footer>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

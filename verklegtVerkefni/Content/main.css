@@ -16,17 +16,11 @@
 }
 .right
 {
-    margin-top:40px;
+    margin-top:-375px;
+    padding-bottom:200px;
     float:right;
     width:19%;
 }
-.middleRequest
-{
-    margin-left:260px;
-    margin-top:-620px;
-    width:70%;
-}
-
 #requestTable
 {
     width:70%;
@@ -35,9 +29,38 @@
 {
     margin-bottom:20px;
 }
+#mainContent
+{
+    background-color:white;
+    margin-top:-80px;
+    padding-bottom:300px;
+    padding-right:100px;
+    border:solid 1px #e1e1e1;
+    border-radius:3px;
+    box-shadow:0 0 4px #d6d6d6;
+    width:1300px;
+    max-width:100%;
+}
+.middleRequest
+{
+    margin-left:260px;
+    padding-top:60px;
+    width:80%;
+}
+.middleInstruction 
+{
+    margin-top:70px;
+    width:75%;
+    position:inherit;
+}
+.middleInformation
+{
+    margin-top:70px;
+    width:75%;
+    position:inherit;
+}
 .middleMain
 {
-    margin-top:-700px;
     padding-left:350px;
     padding-top:120px;
     font-size:30px;
@@ -46,27 +69,28 @@
 {
     width:100%;
     margin-left:100px;
-    margin-top:-650px;
     padding-left:180px;
 }
 .middleLogIn
 {
+    padding-top:40px;
     margin-left:100px;
-    margin-top:-650px;
     padding-left:180px;
 }
 .middleChangePassword
 {
     margin-left:280px;
-    margin-top:-660px;
     width:100%;
     position:absolute;
 }
 .middleRegister
 {
     margin-left:280px;
-    margin-top:-650px;
     width:100%;
+}
+.newRequestLink
+{
+    padding-top:30px;
 }
 .backNewRequest
 {
@@ -76,15 +100,25 @@
 {
     margin-bottom:20px;
 }
+.logInRegister
+{
+    padding-right:16px;
+}
 .text-box single-line
 {
     width:100%;
+}
+.logoLink
+{
+    background-image: url("~/images/hipsterLogo.png");
+    width:339px;
+    height:116px;
 }
 #logo
 {
 	margin:50px;
 	clear:both;
-    padding-top:20px;
+    padding-top:-100px;
 }
 #navigation
 {
@@ -105,18 +139,6 @@
 {
     margin-top:-220px;
     float:right;
-}
-#mainContent
-{
-    background-color:white;
-    margin-top:-80px;
-    padding-bottom:700px;
-    padding-right:100px;
-    border:solid 1px #e1e1e1;
-    border-radius:3px;
-    box-shadow:0 0 4px #d6d6d6;
-    width:1300px;
-    max-width:100%;
 }
 col-md-10
 {
@@ -185,19 +207,32 @@ h4
 {
     padding-left:20px;
 }
-#Ad2,
-#Ad1,
-#Ad3
+.footerMain
 {
-	border:solid 2px black;
-    padding:60px;
-    padding-right:30px;
-    margin-bottom:10px;
+    bottom:0;
+    max-width:100%;
+    height:80px;
+    left:0;
+    background:#363738;
+    color:white;
+    padding-left:280px;
+    padding-top:25px;
+    font-family:Arial, sans-serif;
+    font-size:16px;
+    border:solid 1px #363738;
+    border-bottom-right-radius:3px;
+    border-bottom-left-radius:3px;
+}
+.footerMain p
+{
+    display:inline;
+    margin-left:30px;
 }
 #navigation 
 {
     background: #363738;
-    width: 72%;
+    width: 76%;
+
 }
 #navigation ul 
 {
