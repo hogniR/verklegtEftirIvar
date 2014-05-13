@@ -26,7 +26,7 @@
             {
                 <tr>
                     <td>
-                        <div id="request">@files.name</div>
+                        <div id="request">@files.name (@files.language)</div>
                     </td>
 
                         @if (files.episode != 0)
@@ -45,6 +45,10 @@
                         <td>
                             @files.likes
                         </td>
+                        <td>
+                            @Html.ActionLink("Niðurhala textaskrá", "downloadFile", new { id = files.id })
+                        </td>
+                    <td><a href="#" id="like">Like</a></td>
                 </tr>
             }
         </tbody>
@@ -52,3 +56,19 @@
 
 </body>
 </html>
+<script language="javascript">
+    $("a").click(function () {
+        $.ajax({
+            type: "POST",
+            url: "@Url.Action("addLike", "file")",
+            data: { id: id },
+            success: function (data) {
+                alert('called add like');
+            },
+            error: function () {
+                alert('something failed');
+            }
+        });
+        $(this).hide();
+    });
+</script>
