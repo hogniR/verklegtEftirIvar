@@ -22,9 +22,10 @@ namespace verklegtVerkefni.Controllers
         public ActionResult uploadFile(files infoForFile, HttpPostedFileBase uploadFile)
         {
             string content = null;
-            if(uploadFile.ContentLength > 0)
+           //uploadFile.ContentLength > 0
+            if (uploadFile != null)
             {
-                
+
                 using (StreamReader sr = new StreamReader(uploadFile.InputStream))
                 {
                     string line;
@@ -34,16 +35,15 @@ namespace verklegtVerkefni.Controllers
                         content += line + "@";
                     }
                 }
+                infoForFile.name = infoForFile.name.ToLower();
                 infoForFile.content = content;
                 repository.addNewFile(infoForFile);
                 return RedirectToAction("Index", "Home");
             }
             else
             {
-                return RedirectToAction("Error");
+                return View();
             }
-            
-            
         }
         public FileStreamResult downloadFile(int? id)
         {
@@ -60,7 +60,7 @@ namespace verklegtVerkefni.Controllers
             search newItem = new search();
             UpdateModel(newItem);
             IEnumerable<files> result = (from s in repository.getAllFiles()
-                                          where s.name.StartsWith(newItem.searchTerms)
+                                          where s.name.ToLower().StartsWith(newItem.searchTerms)
                                           select s);
             return View(result);
         }
