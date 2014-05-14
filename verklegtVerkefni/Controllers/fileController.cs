@@ -73,13 +73,17 @@ namespace verklegtVerkefni.Controllers
             }
         }
         [HttpPost]
-        public ActionResult addLike(int id)
+        public ActionResult addLike(int? id)
         {
-            Debug.WriteLine("function call worked");
-            files fileToChange = repository.getFileById(id);
-            fileToChange.likes = fileToChange.likes + 1;
-            repository.save();
-            return Json(fileToChange.likes, JsonRequestBehavior.AllowGet);
+            if(id.HasValue)
+            {
+                files fileToChange = repository.getFileById(id.Value);
+                fileToChange.likes = fileToChange.likes + 1;
+                repository.save();
+                return Json(fileToChange.likes, JsonRequestBehavior.AllowGet);
+            }
+            return View();
+            
         }
         public ActionResult listOfFiles()
         {
