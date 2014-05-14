@@ -296,6 +296,9 @@
     <Content Include="Views\file\newest.cshtml" />
     <Content Include="Views\file\uploadFile.cshtml" />
     <Content Include="Views\file\searchResults.cshtml" />
+    <Content Include="Views\file\listOfFiles.cshtml" />
+    <Content Include="Views\file\listOfPopular.cshtml" />
+    <Content Include="Views\Shared\mostPopular.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

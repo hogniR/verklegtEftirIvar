@@ -64,5 +64,20 @@ namespace verklegtVerkefni.Controllers
                                           select s);
             return View(result);
         }
+        public ActionResult listOfFiles()
+        {
+            IEnumerable<files> result = (from files in repository.getAllFiles()
+                                         orderby files.dateOfPost descending
+                                         select files).Take(10);
+            return View(result);
+        }
+        public ActionResult listOfPopular()
+        {
+            IEnumerable<files> result = (from files in repository.getAllFiles()
+                                         orderby files.likes descending
+                                         select files).Take(10);
+
+            return View(result);
+        }
     }
 }

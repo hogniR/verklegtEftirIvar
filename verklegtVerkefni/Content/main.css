@@ -97,6 +97,11 @@
     padding-top:10px;
     float:left;
 }
+.middleSearchResults
+{
+    width:60%;
+    float:left;
+}
 .newRequestLink
 {
     padding-top:30px;
