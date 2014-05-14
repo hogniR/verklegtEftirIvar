@@ -72,13 +72,14 @@ namespace verklegtVerkefni.Controllers
                 return View(result);
             }
         }
-        public ActionResult addLike(int? id)
+        [HttpPost]
+        public ActionResult addLike(int id)
         {
             Debug.WriteLine("function call worked");
-            files fileToChange = repository.getFileById(id.Value);
+            files fileToChange = repository.getFileById(id);
             fileToChange.likes = fileToChange.likes + 1;
             repository.save();
-            return RedirectToAction("searchResult");
+            return Json(fileToChange.likes, JsonRequestBehavior.AllowGet);
         }
     }
 }

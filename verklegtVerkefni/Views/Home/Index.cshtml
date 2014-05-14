@@ -9,12 +9,11 @@
 <head>
     <title>textit</title>
     <link rel="stylesheet" type="text/css" href="~/Content/main.css" media="screen, projection" />
-    <script src="JavaScript.js"></script>
 </head>
 <body>
 
 <div class="middleMain">
-    @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+    @using (Html.BeginForm("searchResults", "file", FormMethod.Post))
     {
         <div class="searchBoxIndex">
             @Html.EditorFor(model => model.searchTerms)
