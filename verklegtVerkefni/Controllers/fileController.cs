@@ -18,6 +18,7 @@ namespace verklegtVerkefni.Controllers
         {
             return View(new files());
         }
+        [Authorize]
         [HttpPost]
         public ActionResult uploadFile(files infoForFile, HttpPostedFileBase uploadFile)
         {
