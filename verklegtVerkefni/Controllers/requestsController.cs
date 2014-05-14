@@ -35,11 +35,11 @@ namespace verklegtVerkefni.Controllers
         }
         public ActionResult viewRequest(int? id)
         {
-            var newRequest = repository.getRequestByid(id.Value);
+            var viewRequest = repository.getRequestByid(id.Value);
             
-            if(newRequest != null)
+            if(viewRequest != null)
             {
-                return View(newRequest);
+                return View(viewRequest);
             }
             return View("Error");
         }
