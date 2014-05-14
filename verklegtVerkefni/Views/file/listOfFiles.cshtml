@@ -17,7 +17,6 @@
             <thead>
                 <tr>
                     <th>Nafn</th>
-                    <th>Tungumál</th>
                     <th>Sería</th>
                     <th>Þáttur</th>
                     <th>Likes</th>
@@ -29,17 +28,28 @@
                 {
                     <tr>
                         <td>
-                            @file.name
+                            @Html.ActionLink(file.name, "downloadFile", new { id = file.id })
+                            (@file.language)
+                            
+                            @if (file.deaf == true)
+                            {
+                                <img src="~/images/deaf.jpg" />
+                            }
                         </td>
-                        <td>
-                            @file.language
-                        </td>
-                        <td>
-                            @file.series
-                        </td>
-                        <td>
-                            @file.episode
-                        </td>
+                        @if (file.series < 1 && file.episode < 1)
+                        {
+                            <td></td>
+                            <td></td>
+                        }
+                        else
+                        {
+                            <td>
+                                @file.series
+                            </td>
+                            <td>
+                                @file.episode
+                            </td>
+                        }
                         <td>
                             @file.likes
                         </td>
