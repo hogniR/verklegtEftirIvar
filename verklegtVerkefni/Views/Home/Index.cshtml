@@ -1,5 +1,5 @@
 ﻿@model verklegtVerkefni.Models.search
-
+@using Microsoft.AspNet.Identity
 @{
     ViewBag.Title = "Home Page";
 }
@@ -20,9 +20,13 @@
             <!--<input type="search" id="searchBox" name="searchBox" placeholder="Leita..." />-->
             <input type="submit" id="searchButtonIndex" value="Leita"/>
         </div>
-        <div class="uploadNewFile">
-            @Html.ActionLink("Upphala nýrri skrá", "uploadFile", "file")
-        </div>
+        if (Request.IsAuthenticated)
+        {
+            <div class="uploadNewFile">
+                @Html.ActionLink("Upphala nýrri skrá", "uploadFile", "file")
+            </div>
+        }
+        
     }
 </div> <!--middle content lokast-->
 
