@@ -62,6 +62,7 @@ namespace verklegtVerkefni.Controllers
             if(newItem.searchTerms == null)
             {
                 IEnumerable<files> result = (from s in repository.getAllFiles()
+                                             orderby s.name
                                              select s);
                 return View(result);
             }
@@ -69,6 +70,7 @@ namespace verklegtVerkefni.Controllers
             {
                 IEnumerable<files> result = (from s in repository.getAllFiles()
                                              where s.name.ToLower().StartsWith(newItem.searchTerms)
+                                             orderby s.name
                                              select s);
                 return View(result);
             }

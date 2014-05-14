@@ -13,10 +13,11 @@
     <table id="requestTable">
         <thead>
             <tr>
-                <th>Stada</th>
-                <th>Beidnir</th>
+                <th>Nafn skráar</th>
+                <th>Sería</th>
+                <th>Þáttur</th>
                 <th>Likes</th>
-                <th>Dagsetning</th>
+                <th> </th>
             </tr>
         </thead>
         <tbody>
@@ -24,29 +25,28 @@
             {
                 <tr>
                     <td>
-                        <div id="request">@files.name (@files.language)</div>
+                        <div id="request">@Html.ActionLink(files.name + " (" + files.language + ")", "downloadFile", new { id = files.id })</div>
                     </td>
 
                         @if (files.episode != 0)
                         {
                             <td>
-                                @files.series;
+                                @files.series
                             </td>
                             <td>
-                                @files.episode;
+                                @files.episode
                             </td>
+                        }else
+                        {
+                            <td> </td>
+                            <td> </td>
                         }
-                        <td>
-                            @files.language
-                        </td>
 
                         <td id="totalLikes_@files.id">
                             @files.likes
                         </td>
-                        <td>
-                            @Html.ActionLink("Niðurhala textaskrá", "downloadFile", new { id = files.id })
-                        </td>
-                    <td id="like_@files.id"><a href="#" onclick="addLike(@files.id)" id="likeButton_@files.id">Like</a></td>
+                        <td id="like_@files.id"><a href="#" onclick="addLike(@files.id)" id="likeButton_@files.id">Like</a></td>
+                    
                 </tr>
             }
         </tbody>

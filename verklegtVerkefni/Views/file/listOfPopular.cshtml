@@ -28,8 +28,7 @@
                 {
                     <tr>
                         <td>
-                            @Html.ActionLink(file.name, "downloadFile", new { id = file.id })
-                            (@file.language)
+                            @Html.ActionLink(file.name + " (" + file.language + ")", "downloadFile", new { id = file.id })
                             
                             @if (file.deaf == true)
                             {
