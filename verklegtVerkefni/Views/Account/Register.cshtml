@@ -2,13 +2,11 @@
 @{
     ViewBag.Title = "Nýskráning";
 }
-<!DOCTYPE html>
-<html lang="is">
 <head>
-    <title>textit</title>
+    <meta charset="utf-8" />
+    <title></title>
     <link rel="stylesheet" type="text/css" href="~/Content/main.css" media="screen, projection" />
 </head>
-<body>
     <div class="middleRegister">
         <h2>@ViewBag.Title</h2>
     @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
@@ -45,5 +43,4 @@
         @Scripts.Render("~/bundles/jqueryval")
     }
     </div>
-    </body>
-</html>
+

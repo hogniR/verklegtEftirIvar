@@ -3,13 +3,11 @@
 @{
     ViewBag.Title = "newRequests";
 }
-<!DOCTYPE html>
-    <html lang="is">
-    <head>
-        <title>textit</title>
-        <link rel="stylesheet" type="text/css" href="~/Content/main.css" media="screen, projection" />
-    </head>
-    <body>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="~/Content/main.css" media="screen, projection" />
+</head>
         @using(Html.BeginForm("newRequest", "requests", FormMethod.Post))
         { 
         <div class="middleNewRequest">
@@ -52,5 +50,3 @@
             </div>
         </div>
         }
-    </body>
-</html>

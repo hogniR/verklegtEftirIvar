@@ -3,15 +3,12 @@
 @{
     ViewBag.Title = "Home Page";
 }
-<!--forsida-->
-<!DOCTYPE html>
-<html lang="is">
 <head>
-    <title>textit</title>
+    <meta charset="utf-8" />
+    <title></title>
     <link rel="stylesheet" type="text/css" href="~/Content/main.css" media="screen, projection" />
 </head>
-<body>
-
+<!--forsida-->
 <div class="middleMain">
     @using (Html.BeginForm("searchResults", "file", FormMethod.Post))
     {
@@ -29,6 +26,3 @@
         
     }
 </div> <!--middle content lokast-->
-
-</body>
-</html>

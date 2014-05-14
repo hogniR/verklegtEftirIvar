@@ -9,7 +9,7 @@
 .left
 {
     float:left;
-    width:19%;
+    width:15%;
     margin-top:380px;
     font-size:18px;
     margin-left:100px;
@@ -77,9 +77,8 @@
 }
 .middleLogIn
 {
-    padding-top:40px;
-    margin-left:100px;
-    padding-left:180px;
+    padding-top:50px;
+    margin-left:80px;
     width:100%;
 }
 .middleChangePassword
@@ -105,6 +104,12 @@
     width:60%;
     float:left;
 }
+.middleTables
+{
+    width:80%;
+    margin-left:150px;
+    padding-top:50px;
+}
 .newRequestLink
 {
     padding-top:30px;
@@ -113,10 +118,38 @@
 {
     float:left;
 }
+#tableCenter
+{
+    text-align:center;
+}
 #displayData
 {
     margin-top:7px;
     font-weight:bold;
+}
+#nameLength
+{
+    width:20%;
+}
+#filesTableNewest th
+{
+    padding-bottom:10px;
+    font-size:16px;
+}
+#filesTablePopular th
+{
+    padding-bottom:10px;
+    font-size:16px;
+}
+#filesTableNewest
+{
+    margin-top:20px;
+    width:80%;
+}
+#filesTablePopular
+{
+    margin-top:20px;
+    width:80%;
 }
 #headerLogIn
 {

@@ -3,14 +3,11 @@
 @{
     ViewBag.Title = "Upphala skrá";
 }
-
-<!DOCTYPE html>
-<html>
 <head>
+    <meta charset="utf-8" />
+    <title></title>
     <link rel="stylesheet" type="text/css" href="~/Content/main.css" media="screen, projection" />
-    <title>uploadFile</title>
 </head>
-<body>
     <div class="middleUpload">
         @using (Html.BeginForm("uploadFile", "file", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
@@ -93,5 +90,3 @@
             }
 
         </script>
-</body>
-</html>
