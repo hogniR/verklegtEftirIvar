@@ -17,7 +17,6 @@
                 <table id="requestTable">
                     <thead>
                         <tr>
-                            <th>Stada</th>
                             <th>Beidnir</th>
                             <th>Likes</th>
                             <th>Dagsetning</th>
@@ -27,13 +26,6 @@
                         @foreach (var request in Model)
                         {
                             <tr>
-                                <td>
-                                    <select name="statusOnRequest">
-                                        <option value="unfinished">Olokid</option>
-                                        <option value="inProgress">I vinnslu</option>
-                                        <option value="finished">Lokid</option>
-                                    </select>
-                                </td>
                                 <td>
                                     <div id="request">@Html.ActionLink(request.name, "viewRequest", new { id = request.id })</div>
                                 </td>

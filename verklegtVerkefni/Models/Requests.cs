@@ -15,6 +15,8 @@ namespace verklegtVerkefni.Models
         public string comment { get; set; }
         [Display(Name = "Tungumál")]
         public string language { get; set; }
+        [Display(Name = "Heyrnarskert/ur")]
+        public bool deaf { get; set; }
         [Display(Name = "Dagsetning")]
         public DateTime dateOfPost { get; set; }
         public int likes { get; set; }

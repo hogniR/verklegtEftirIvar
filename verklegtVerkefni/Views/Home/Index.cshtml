@@ -14,14 +14,17 @@
 <body>
 
 <div class="middleMain">
-    @Html.BeginForm("searchResults", "file")
-    {   
-        @Html.LabelFor(model => model.searchTerms, new { @class = "control-label col-md-2" })
-        @Html.EditorFor(model => model.searchTerms)
-        <!--<input type="search" id="searchBox" name="searchBox" placeholder="Leita..." />-->
-        <input type="submit" value="Leita" />
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+    {
+        <div class="searchBoxIndex">
+            @Html.EditorFor(model => model.searchTerms)
+            <!--<input type="search" id="searchBox" name="searchBox" placeholder="Leita..." />-->
+            <input type="submit" id="searchButtonIndex" value="Leita"/>
+        </div>
+        <div class="uploadNewFile">
+            @Html.ActionLink("Upphala nýrri skrá", "uploadFile", "file")
+        </div>
     }
-    @Html.ActionLink("Upphala nýrri skrá", "uploadFile", "file")
 </div> <!--middle content lokast-->
 
 </body>
