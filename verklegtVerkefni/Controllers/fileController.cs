@@ -21,12 +21,11 @@ namespace verklegtVerkefni.Controllers
         [HttpPost]
         public ActionResult uploadFile(files infoForFile, HttpPostedFileBase uploadFile)
         {
-            string content = null;
-           //uploadFile.ContentLength > 0
+            
             if (uploadFile != null)
             {
-
-                using (StreamReader sr = new StreamReader(uploadFile.InputStream))
+                string content = null;
+                using (StreamReader sr = new StreamReader(uploadFile.InputStream, Encoding.Default, true))
                 {
                     string line;
 
@@ -47,22 +46,40 @@ namespace verklegtVerkefni.Controllers
         }
         public FileStreamResult downloadFile(int? id)
         {
-            var fileToDownload = repository.getFileById(16);
+            var fileToDownload = repository.getFileById(id.Value);
             var content = fileToDownload.content;
             content = content.Replace("@", System.Environment.NewLine);
-            var byteArray = Encoding.ASCII.GetBytes(content);
+            var byteArray = Encoding.UTF8.GetBytes(content);
             var stream = new MemoryStream(byteArray);
 
-            return File(stream, "text/plain", fileToDownload.name + ".txt");
+            return File(stream, "text/plain", fileToDownload.name + "(" + fileToDownload.language + ")" + ".txt");
         }
         public ActionResult searchResults(FormCollection form)
         {
             search newItem = new search();
             UpdateModel(newItem);
-            IEnumerable<files> result = (from s in repository.getAllFiles()
-                                          where s.name.ToLower().StartsWith(newItem.searchTerms)
-                                          select s);
-            return View(result);
+            if(newItem.searchTerms == null)
+            {
+                IEnumerable<files> result = (from s in repository.getAllFiles()
+                                             select s);
+                return View(result);
+            }
+            else
+            {
+                IEnumerable<files> result = (from s in repository.getAllFiles()
+                                             where s.name.ToLower().StartsWith(newItem.searchTerms)
+                                             select s);
+                return View(result);
+            }
+        }
+        [HttpPost]
+        public ActionResult addLike(int id)
+        {
+            Debug.WriteLine("function call worked");
+            files fileToChange = repository.getFileById(id);
+            fileToChange.likes = fileToChange.likes + 1;
+            repository.save();
+            return Json(fileToChange.likes, JsonRequestBehavior.AllowGet);
         }
     }
 }

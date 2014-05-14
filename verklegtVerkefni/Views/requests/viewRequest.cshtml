@@ -23,33 +23,29 @@
 
                 <div class="form-group">
                     @Html.LabelFor(model => model.name, new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.name)
-                        @Html.ValidationMessageFor(model => model.name)
+                    <div class="col-md-10" id="displayData">
+                        @Html.Name(Model.name)
                     </div>
                 </div>
 
                 <div class="form-group">
                     @Html.LabelFor(model => model.comment, new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.comment)
-                        @Html.ValidationMessageFor(model => model.comment)
+                    <div class="col-md-10" id="displayData">
+                        @Html.Name(Model.comment)
                     </div>
                 </div>
 
                 <div class="form-group">
                     @Html.LabelFor(model => model.language, new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.language)
-                        @Html.ValidationMessageFor(model => model.language)
+                    <div class="col-md-10" id="displayData">
+                        @Html.Name(Model.language)
                     </div>
                 </div>
 
                 <div class="form-group">
                     @Html.LabelFor(model => model.dateOfPost, new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.dateOfPost)
-                        @Html.ValidationMessageFor(model => model.dateOfPost)
+                    <div class="col-md-10" id="displayData">
+                        @Html.DisplayFor(model => model.dateOfPost)
                     </div>
                 </div>
             </div>

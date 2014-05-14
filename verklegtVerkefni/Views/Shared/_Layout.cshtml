@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="~/Content/main.css" media="screen, projection" />
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
+   @Scripts.Render("~/bundles/jquery")
+     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    
+    @RenderSection("scripts", required: false)
 
 </head>
 <body>
@@ -74,10 +77,10 @@
         <p>Aðalgata 1, 101 Reykjavík</p>
         <p>texit@textit.is</p>
         <p>555-5555</p>
-        <p>kt. 123456-7899</p>
+        <p>kt. 123456-7890</p>
     </footer>
-    @Scripts.Render("~/bundles/jquery")
+
     @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    
 </body>
 </html>

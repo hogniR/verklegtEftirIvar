@@ -9,6 +9,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    @Scripts.Render("~/bundles/jquery")
     <title>searchResults</title>
 </head>
 <body>
@@ -26,7 +27,7 @@
             {
                 <tr>
                     <td>
-                        <div id="request">@files.name</div>
+                        <div id="request">@files.name (@files.language)</div>
                     </td>
 
                         @if (files.episode != 0)
@@ -45,6 +46,10 @@
                         <td>
                             @files.likes
                         </td>
+                        <td>
+                            @Html.ActionLink("Niðurhala textaskrá", "downloadFile", new { id = files.id })
+                        </td>
+                    <td id="like+@files.id"><a href="#" onclick="addLike(@files.id)" id="likeButton+@files.id">Like</a></td>
                 </tr>
             }
         </tbody>
@@ -52,3 +57,34 @@
 
 </body>
 </html>
+<script type="text/javascript">
+        function addLike(id){
+            $.ajax({
+                type: "POST",
+                url: '@Html.Action("addLike")',
+                data: id,
+                cache: false,
+                success: function (data) {
+                    alert(data);
+                    $('#likeButton' + id).hide();
+                    $('#like' + id).append("<div>this many: " + data + "</div>");
+                }
+            })
+        }
+        
+/*
+    $("a").click(function () {
+        $.ajax({
+            type: "POST",
+            url: ,
+            data: { id: id },
+            success: function (data) {
+                alert('called add like');
+            },
+            error: function () {
+                alert('something failed');
+            }
+        });
+        $(this).hide();
+    });*/
+</script>

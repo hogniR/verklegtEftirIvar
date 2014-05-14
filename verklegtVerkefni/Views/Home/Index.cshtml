@@ -9,19 +9,21 @@
 <head>
     <title>textit</title>
     <link rel="stylesheet" type="text/css" href="~/Content/main.css" media="screen, projection" />
-    <script src="JavaScript.js"></script>
 </head>
 <body>
 
 <div class="middleMain">
-    @Html.BeginForm("searchResults", "file")
-    {   
-        @Html.LabelFor(model => model.searchTerms, new { @class = "control-label col-md-2" })
-        @Html.EditorFor(model => model.searchTerms)
-        <!--<input type="search" id="searchBox" name="searchBox" placeholder="Leita..." />-->
-        <input type="submit" value="Leita" />
+    @using (Html.BeginForm("searchResults", "file", FormMethod.Post))
+    {
+        <div class="searchBoxIndex">
+            @Html.EditorFor(model => model.searchTerms)
+            <!--<input type="search" id="searchBox" name="searchBox" placeholder="Leita..." />-->
+            <input type="submit" id="searchButtonIndex" value="Leita"/>
+        </div>
+        <div class="uploadNewFile">
+            @Html.ActionLink("Upphala nýrri skrá", "uploadFile", "file")
+        </div>
     }
-    @Html.ActionLink("Upphala nýrri skrá", "uploadFile", "file")
 </div> <!--middle content lokast-->
 
 </body>
