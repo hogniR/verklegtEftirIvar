@@ -100,6 +100,11 @@
     float: left;
     width: 70%;
 }
+.middleSearchResults
+{
+    width:60%;
+    float:left;
+}
 .newRequestLink
 {
     padding-top:30px;
