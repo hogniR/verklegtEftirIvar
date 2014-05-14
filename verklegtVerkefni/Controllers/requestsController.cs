@@ -35,7 +35,7 @@ namespace verklegtVerkefni.Controllers
         }
         public ActionResult viewRequest(int? id)
         {
-            var viewRequest = repository.getRequestByid(id.Value);
+            var viewRequest = repository.getRequestById(id.Value);
             
             if(viewRequest != null)
             {
@@ -50,6 +50,19 @@ namespace verklegtVerkefni.Controllers
                                             orderby request.likes descending
                                             select request).Take(10);
             return View(result);
+        }
+        [HttpPost]
+        public ActionResult addLike(int? id)
+        {
+            if (id.HasValue)
+            {
+                Requests fileToChange = repository.getRequestById(id.Value);
+                fileToChange.likes = fileToChange.likes + 1;
+                repository.save();
+                return Json(fileToChange.likes, JsonRequestBehavior.AllowGet);
+            }
+            return View();
+
         }
 	}
 }

@@ -24,18 +24,18 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var file in Model)
+                @foreach (var files in Model)
                 {
                     <tr>
                         <td>
-                            @Html.ActionLink(file.name + " (" + file.language + ")", "downloadFile", new { id = file.id })
+                            @Html.ActionLink(files.name + " (" + files.language + ")", "downloadFile", new { id = files.id })
                             
-                            @if (file.deaf == true)
+                            @if (files.deaf == true)
                             {
                                 <img src="~/images/deaf.jpg" />
                             }
                         </td>
-                        @if(file.series < 1 && file.episode < 1)
+                        @if(files.series < 1 && files.episode < 1)
                         {
                             <td>
                                 
@@ -47,22 +47,35 @@
                         else
                         {
                             <td>
-                                @file.series
+                                @files.series
                             </td>
                             <td>
-                                @file.episode
+                                @files.episode
                             </td>   
                         }
-                        <td>
-                            @file.likes
+                        <td id="totalLikes_@files.id">
+                            @files.likes<p id="like_@files.id"><a href="#" onclick="addLike(@files.id)" id="likeButton_@files.id">Like</a></p>
                         </td>
                         <td>
-                            @file.dateOfPost
+                            @files.dateOfPost
                         </td>
                     </tr>
                 }                
             </tbody>
         </table>
+        <script type="text/javascript">
+            function addLike(id) {
+                $.ajax({
+                    type: "POST",
+                    url: "addLike",
+                    data: { 'id': id },
+                    success: function (data) {
+                        $('#likeButton_' + id).hide();
+                        $('#totalLikes_' + id).replaceWith(data);
+                    }
+                })
+            }
+        </script>
 
     </div>
 </body>

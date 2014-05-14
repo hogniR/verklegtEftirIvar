@@ -29,8 +29,8 @@
                                 <td>
                                     <div id="request">@Html.ActionLink(request.name, "viewRequest", new { id = request.id })</div>
                                 </td>
-                                <td>
-                                    @request.likes
+                                <td id="totalLikes_@request.id">
+                                    @request.likes<p id="like_@request.id"><a href="#" onclick="addLike(@request.id)" id="likeButton_@request.id">Like</a></p>
                                 </td>
                                 <td>
                                     @request.dateOfPost
@@ -42,6 +42,19 @@
             <p class="newRequestLink">
                 @Html.ActionLink("Senda inn beiðni", "newRequest", "requests")
             </p>
+            <script type="text/javascript">
+                function addLike(id) {
+                    $.ajax({
+                        type: "POST",
+                        url: "addLike",
+                        data: { 'id': id },
+                        success: function (data) {
+                            $('#likeButton_' + id).hide();
+                            $('#totalLikes_' + id).replaceWith(data);
+                        }
+                    })
+                }
+            </script>
             </div> <!--middle content lokast-->
 </body>
 </html>        

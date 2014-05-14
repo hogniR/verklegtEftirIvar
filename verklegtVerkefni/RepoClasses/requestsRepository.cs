@@ -22,7 +22,7 @@ namespace verklegtVerkefni.RepoClasses
             m_db.SaveChanges();
             return;
         }
-        public Requests getRequestByid(int id)
+        public Requests getRequestById(int id)
         {
             var result = (from s in m_db.requests
                           where s.id == id
