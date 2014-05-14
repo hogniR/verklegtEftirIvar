@@ -1,8 +1,5 @@
 ﻿@model IEnumerable<verklegtVerkefni.Models.files>
 
-@{
-    Layout = null;
-}
 
 <!DOCTYPE html>
 
@@ -43,48 +40,29 @@
                             @files.language
                         </td>
 
-                        <td>
+                        <td id="totalLikes_@files.id">
                             @files.likes
                         </td>
                         <td>
                             @Html.ActionLink("Niðurhala textaskrá", "downloadFile", new { id = files.id })
                         </td>
-                    <td id="like+@files.id"><a href="#" onclick="addLike(@files.id)" id="likeButton+@files.id">Like</a></td>
+                    <td id="like_@files.id"><a href="#" onclick="addLike(@files.id)" id="likeButton_@files.id">Like</a></td>
                 </tr>
             }
         </tbody>
     </table>
-
-</body>
-</html>
-<script type="text/javascript">
-        function addLike(id){
+    <script type="text/javascript">
+        function addLike(id) {
             $.ajax({
                 type: "POST",
-                url: '@Html.Action("addLike")',
-                data: id,
-                cache: false,
+                url: "addLike",
+                data: { 'id': id },
                 success: function (data) {
-                    alert(data);
-                    $('#likeButton' + id).hide();
-                    $('#like' + id).append("<div>this many: " + data + "</div>");
+                    $('#likeButton_' + id).hide();
+                    $('#totalLikes_' + id).replaceWith(data);
                 }
             })
         }
-        
-/*
-    $("a").click(function () {
-        $.ajax({
-            type: "POST",
-            url: ,
-            data: { id: id },
-            success: function (data) {
-                alert('called add like');
-            },
-            error: function () {
-                alert('something failed');
-            }
-        });
-        $(this).hide();
-    });*/
-</script>
+    </script>
+</body>
+</html>
