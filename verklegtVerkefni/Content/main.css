@@ -95,10 +95,17 @@
     padding-top:10px;
     float:left;
 }
+<<<<<<< HEAD
 .middleUpload
 {
     float:left;
     width:70%;
+=======
+.middleSearchResults
+{
+    width:60%;
+    float:left;
+>>>>>>> newsolvi
 }
 .newRequestLink
 {
