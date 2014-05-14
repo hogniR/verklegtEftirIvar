@@ -1,18 +1,13 @@
 ﻿@model IEnumerable<verklegtVerkefni.Models.files>
 
 @{
-    Layout = null;
+    ViewBag.Title = "Leitarniðutstöður";
 }
-
-<!DOCTYPE html>
-
-<html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    @Scripts.Render("~/bundles/jquery")
-    <title>searchResults</title>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="~/Content/main.css" media="screen, projection" />
 </head>
-<body>
     <table id="requestTable">
         <thead>
             <tr>
@@ -55,8 +50,6 @@
         </tbody>
     </table>
 
-</body>
-</html>
 <script type="text/javascript">
         function addLike(id){
             $.ajax({

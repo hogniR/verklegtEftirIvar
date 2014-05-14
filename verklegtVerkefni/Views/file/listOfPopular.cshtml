@@ -1,26 +1,23 @@
 ﻿@model IEnumerable<verklegtVerkefni.Models.files>
 
 @{
-    ViewBag.Title = "listOfPopular";
+    ViewBag.Title = "Vinsælasta efni";
 }
-<!--Listi af skrám-->
-<!DOCTYPE html>
-<html lang="is">
 <head>
-    <title>textit</title>
+    <meta charset="utf-8" />
+    <title></title>
     <link rel="stylesheet" type="text/css" href="~/Content/main.css" media="screen, projection" />
-    <script src="JavaScript.js" type="text/javascript"></script>
 </head>
-<body>
-    <div class="middleFiles">
-        <table id="filesTable">
+    <!--Listi af skrám-->
+    <div class="middleTables">
+        <h2>Vinsælasta efni</h2>
+        <table id="filesTablePopular">
             <thead>
                 <tr>
                     <th>Nafn</th>
-                    <th>Tungumál</th>
-                    <th>Sería</th>
-                    <th>Þáttur</th>
-                    <th>Likes</th>
+                    <th id="tableCenter">Sería</th>
+                    <th id="tableCenter">Þáttur</th>
+                    <th id="tableCenter">Likes</th>
                     <th>Dagsetning</th>
                 </tr>
             </thead>
@@ -28,29 +25,24 @@
                 @foreach (var file in Model)
                 {
                     <tr>
-                        <td>
+                        <td id="nameLength">
                             @file.name
                         </td>
-                        <td>
-                            @file.language
-                        </td>
-                        <td>
+                        <td id="tableCenter">
                             @file.series
                         </td>
-                        <td>
+                        <td id="tableCenter">
                             @file.episode
                         </td>
-                        <td>
+                        <td id="tableCenter">
                             @file.likes
                         </td>
                         <td>
                             @file.dateOfPost
                         </td>
                     </tr>
-                }                
+                }
             </tbody>
         </table>
 
     </div>
-</body>
-</html>

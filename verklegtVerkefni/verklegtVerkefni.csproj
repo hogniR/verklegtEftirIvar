@@ -291,8 +291,6 @@
     <Content Include="Views\Home\instructions.cshtml" />
     <Content Include="Views\information.cshtml" />
     <Content Include="Views\Home\information.cshtml" />
-    <Content Include="Views\file\popular.cshtml" />
-    <Content Include="Views\file\newest.cshtml" />
     <Content Include="Views\file\uploadFile.cshtml" />
     <Content Include="Views\file\searchResults.cshtml" />
     <Content Include="Views\file\listOfFiles.cshtml" />
