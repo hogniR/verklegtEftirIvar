@@ -132,6 +132,13 @@ body
     width:100%;
     position:absolute;
 }
+.text-success
+{
+    margin-left:250px;
+    color:green;
+    margin-top:10px;
+
+}
 /*Miðjan á nýskráningu*/
 .middleRegister
 {
