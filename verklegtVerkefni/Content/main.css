@@ -1,4 +1,5 @@
-﻿body
+﻿/*bakgrunnur á bak við hvíta kassann*/
+body
 {
 	margin-right:5%;
 	margin-left:5%;
@@ -6,6 +7,7 @@
     margin-bottom: 50px;
     background: linear-gradient(#ffffff, #e6e6e6);
 }
+/*Vinsælasta og nýjasta efni á vinsti hlið*/
 .left
 {
     float:left;
@@ -14,6 +16,7 @@
     font-size:18px;
     margin-left:100px;
 }
+/*Auglýsinsgar á hægri hlið*/
 .right
 {
     margin-top:-375px;
@@ -21,10 +24,7 @@
     float:right;
     width:19%;
 }
-#requestTable
-{
-    width:70%;
-}
+/*hvíti kassinn utan um allt main contentið*/
 #mainContent
 {
     background-color:white;
@@ -37,24 +37,38 @@
     width:1300px;
     max-width:100%;
 }
+/*miðjan á listi af beiðnum*/
 .middleRequest
 {
     margin-left:260px;
     padding-top:50px;
     width:80%;
 }
+/*taflan listi af beiðnum*/
+#requestTable
+{
+    width:70%;
+}
+#requestTable th
+{
+    padding-bottom:10px;
+    font-size:16px;
+}
+/*miðjan á leiðbeiningum*/
 .middleInstruction 
 {
     margin-top:70px;
     width:75%;
     position:inherit;
 }
+/*Miðjan á Hafa samband*/
 .middleInformation
 {
     margin-top:70px;
     width:75%;
     position:inherit;
 }
+/*Miðjan á search boxinu og upphala nýrri skrá*/
 .middleMain
 {
     padding-left:350px;
@@ -62,52 +76,12 @@
     font-size:30px;
     width:70%;
 }
+/*Miðjan á nýrri beiðni*/
 .middleNewRequest
 {
     width:100%;
     margin-left:100px;
     padding-left:240px;
-    padding-top:50px;
-}
-.middleViewRequest
-{
-    width:50%;
-    padding-top:10px;
-    float:left;
-}
-.middleLogIn
-{
-    padding-top:50px;
-    margin-left:80px;
-    width:100%;
-}
-.middleChangePassword
-{
-    margin-left:280px;
-    padding-top:22px;
-    width:100%;
-    position:absolute;
-}
-.middleRegister
-{
-    width:60%;
-    padding-top:10px;
-    float:left;
-}
-.middleUpload 
-{
-    float: left;
-    width: 70%;
-}
-.middleSearchResults
-{
-    width:60%;
-    float:left;
-}
-.middleTables
-{
-    width:80%;
-    margin-left:150px;
     padding-top:50px;
 }
 .newRequestLink
@@ -118,41 +92,85 @@
 {
     float:left;
 }
-.tableCenter
+/*Miðjan á að skoða beiðnir*/
+.middleViewRequest
 {
-    text-align:center;
-}
-#tableCenter
-{
-    text-align:center;
+    width:50%;
+    padding-top:10px;
+    float:left;
 }
 #displayData
 {
     margin-top:7px;
     font-weight:bold;
 }
-.nameLength
+/*Miðjan á innskráningu*/
+.middleLogIn
 {
-    width:30%;
+    padding-top:50px;
+    margin-left:80px;
+    width:100%;
 }
-#totalLikes_2
+#headerLogIn
 {
-    width:10%;
+    margin-bottom:20px;
 }
-#requestTable th
+#logInPartial 
 {
-    padding-bottom:10px;
-    font-size:16px;
+    font-size:18px;
 }
-#filesTableNewest th
+#logIn
 {
-    padding-bottom:10px;
-    font-size:16px;
+    margin-top:-220px;
+    float:right;
 }
-#filesTablePopular th
+/*Miðjan á breyta lykilorði*/
+.middleChangePassword
 {
-    padding-bottom:10px;
-    font-size:16px;
+    margin-left:280px;
+    padding-top:22px;
+    width:100%;
+    position:absolute;
+}
+.text-success
+{
+    margin-left:250px;
+    color:green;
+    margin-top:10px;
+
+}
+/*Miðjan á nýskráningu*/
+.middleRegister
+{
+    width:60%;
+    padding-top:10px;
+    float:left;
+}
+.logInRegister
+{
+    padding-right:16px;
+    padding-top:10px;
+}
+/*Miðjan á að upphala nýrri skrá*/
+.middleUpload 
+{
+    float: left;
+    width: 70%;
+}
+.newRequestHeader
+{
+    margin-left:-40px;
+}
+.uploadNewFile
+{
+    padding-top:20px;
+    float:none;
+}
+/*Miðjan á leitarniðurstöðum*/
+.middleSearchResults
+{
+    width:60%;
+    float:left;
 }
 #searchTable th
 {
@@ -164,6 +182,23 @@
     margin-top:20px;
     width:70%;
 }
+/*Miðjan á nýjustu og vinsælustu töflunum*/
+.middleTables
+{
+    width:80%;
+    margin-left:150px;
+    padding-top:50px;
+}
+#filesTableNewest th
+{
+    padding-bottom:10px;
+    font-size:16px;
+}
+#filesTablePopular th
+{
+    padding-bottom:10px;
+    font-size:16px;
+}
 #filesTableNewest
 {
     margin-top:20px;
@@ -173,67 +208,6 @@
 {
     margin-top:20px;
     width:80%;
-}
-.marginForLike
-{
-    margin-left:10px;
-}
-#headerLogIn
-{
-    margin-bottom:20px;
-}
-.logInRegister
-{
-    padding-right:16px;
-    padding-top:10px;
-}
-.text-box single-line
-{
-    width:100%;
-}
-#logInPartial 
-{
-    font-size:18px;
-}
-.logoLink
-{
-    background-image: url("~/images/hipsterLogo.png");
-    width:339px;
-    height:116px;
-}
-#logo
-{
-	margin:50px;
-	clear:both;
-    padding-top:-100px;
-}
-#navigation
-{
-    margin-top:-90px;
-    margin-left:250px;
-    border-radius:3px;
-}
-#navigation li
-{
-    display:inline;
-    letter-spacing:-1px;
-}
-#navigation a
-{
-	text-decoration:none;
-}
-#logIn
-{
-    margin-top:-220px;
-    float:right;
-}
-col-md-10
-{
-    height:200px;
-}
-.newRequestHeader
-{
-    margin-left:-40px;
 }
 .popular 
 {
@@ -266,16 +240,45 @@ col-md-10
     margin-top:10px;
     padding-left:15px;
 }
-.uploadNewFile
-{
-    padding-top:20px;
-    float:none;
-}
 .newContent li
 {
     list-style-type:none;
     margin-left:-30px;
     font-size:14px;
+}
+/*Inní öllum töflum*/
+.tableCenter
+{
+    text-align:center;
+}
+#tableCenter
+{
+    text-align:center;
+}
+.nameLength
+{
+    width:30%;
+}
+#totalLikes_2
+{
+    width:10%;
+}
+.marginForLike
+{
+    margin-left:10px;
+}
+/*Partur af layout-i sem birtist á öllum viewum*/
+.logoLink
+{
+    background-image: url("~/images/hipsterLogo.png");
+    width:339px;
+    height:116px;
+}
+#logo
+{
+	margin:50px;
+	clear:both;
+    padding-top:-100px;
 }
 h4
 {
@@ -317,11 +320,23 @@ h4
     display:inline;
     margin-left:30px;
 }
-#navigation 
+/*Navigation sem birtist í öllum viewum*/
+#navigation
 {
+    margin-top:-90px;
+    margin-left:250px;
+    border-radius:3px;
     background: #363738;
     width: 76%;
-
+}
+#navigation li
+{
+    display:inline;
+    letter-spacing:-1px;
+}
+#navigation a
+{
+	text-decoration:none;
 }
 #navigation ul 
 {
