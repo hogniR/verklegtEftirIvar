@@ -53,7 +53,7 @@ namespace verklegtVerkefni.Controllers
             var byteArray = Encoding.UTF8.GetBytes(content);
             var stream = new MemoryStream(byteArray);
 
-            return File(stream, "text/plain", fileToDownload.name + "(" + fileToDownload.language + ")" + ".txt");
+            return File(stream, "text/plain", fileToDownload.name + "(" + fileToDownload.language + ")" + ".srt");
         }
         public ActionResult searchResults(FormCollection form)
         {

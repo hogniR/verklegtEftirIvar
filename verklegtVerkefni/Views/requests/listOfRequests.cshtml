@@ -10,6 +10,9 @@
 </head>
 <!--Listi af beiðnum-->
         <div class="middleRequest">
+            <p class="newRequestLink">
+                @Html.ActionLink("Senda inn beiðni", "newRequest", "requests")
+            </p>
              <h2>Beiðnir</h2>
                 <table id="requestTable">
                     <thead>
@@ -40,9 +43,7 @@
                         }
                     </tbody>
                 </table>
-            <p class="newRequestLink">
-                @Html.ActionLink("Senda inn beiðni", "newRequest", "requests")
-            </p>
+
             <script type="text/javascript">
                 function addLike(id) {
                     $.ajax({
