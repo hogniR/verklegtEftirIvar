@@ -170,7 +170,6 @@
     <Compile Include="Models\DataContext.cs" />
     <Compile Include="Models\files.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\logIn.cs" />
     <Compile Include="Models\Requests.cs" />
     <Compile Include="Models\search.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />

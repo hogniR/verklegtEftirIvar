@@ -24,10 +24,14 @@
                         {
                             <tr>
                                 <td>
-                                    <div id="request">@Html.ActionLink(request.name, "viewRequest", new { id = request.id })</div>
+                                <div id="request">@Html.ActionLink(request.name, "viewRequest", new { id = request.id })</div>
+                                @if (request.deaf == true)
+                                {
+                                    <img src="~/images/deaf.jpg" />
+                                }
                                 </td>
                                 <td id="totalLikes_@request.id">
-                                    @request.likes<p id="like_@request.id"><a href="#" onclick="addLike(@request.id)" id="likeButton_@request.id">Like</a></p>
+                                    @request.likes<span id="like_@request.id" class="marginForLike"><a href="#" class="glyphicon glyphicon-thumbs-up" onclick="addLike(@request.id)" id="likeButton_@request.id"></a></span>
                                 </td>
                                 <td>
                                     @request.dateOfPost
