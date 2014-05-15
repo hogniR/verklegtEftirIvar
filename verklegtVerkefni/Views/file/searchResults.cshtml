@@ -1,5 +1,4 @@
 ﻿@model IEnumerable<verklegtVerkefni.Models.files>
-=======
 @{
     ViewBag.Title = "Leitarniðutstöður";
 }
@@ -9,12 +8,14 @@
     <title></title>
     <link rel="stylesheet" type="text/css" href="~/Content/main.css" media="screen, projection" />
 </head>
-    <table id="requestTable">
+<div class="middleTables">
+    <h2>Leitarniðurstöður</h2>
+    <table id="searchTable">
         <thead>
             <tr>
-                <th>Nafn skráar</th>
-                <th>Sería</th>
-                <th>Þáttur</th>
+                <th>Nafn</th>
+                <th id="tableCenter">Sería</th>
+                <th id="tableCenter">Þáttur</th>
                 <th>Likes</th>
                 <th> </th>
             </tr>
@@ -23,31 +24,37 @@
             @foreach (var files in Model)
             {
                 <tr>
-                    <td>
+                    <td class="nameLength">
                         <div id="request">@Html.ActionLink(files.name + " (" + files.language + ")", "downloadFile", new { id = files.id })</div>
-                    </td>
+                        @if (files.deaf == true)
+                        {
+                            <img src="~/images/deaf.jpg" />
+                        }
+                     </td>
 
                         @if (files.episode != 0)
                         {
-                            <td>
+                            <td class="tableCenter">
                                 @files.series
                             </td>
-                            <td>
+                            <td class="tableCenter">
                                 @files.episode
                             </td>
-                        }else
+                        }
+                        else
                         {
-                            <td> </td>
-                            <td> </td>
+                            <td class="tableCenter"> </td>
+                            <td class="tableCenter"> </td>
                         }
 
-                        <td id="totalLikes_@files.id">
-                            @files.likes<p id="like_@files.id"><a href="#" onclick="addLike(@files.id)" id="likeButton_@files.id">Like</a></p>
-                        </td>
+                    <td id="totalLikes_@files.id">
+                        @files.likes<span id="like_@files.id" class="marginForLike"><a href="#" class="glyphicon glyphicon-thumbs-up" onclick="addLike(@files.id)" id="likeButton_@files.id"></a></span>
+                    </td>
                 </tr>
             }
         </tbody>
     </table>
+    </div>
     <script type="text/javascript">
         function addLike(id) {
             $.ajax({
