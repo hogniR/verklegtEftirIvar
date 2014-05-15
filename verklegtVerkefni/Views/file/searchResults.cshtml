@@ -25,7 +25,7 @@
             {
                 <tr>
                     <td class="nameLength">
-                        <div id="request">@Html.ActionLink(files.name + " (" + files.language + ")", "downloadFile", new { id = files.id })</div>
+                        <span id="request">@Html.ActionLink(files.name + " (" + files.language + ")", "downloadFile", new { id = files.id })</span>
                         @if (files.deaf == true)
                         {
                             <img src="~/images/deaf.jpg" />
