@@ -10,13 +10,13 @@
     <link rel="stylesheet" type="text/css" href="~/Content/main.css" media="screen, projection" />
 </head>
 <div class="middleTables">
-    <h2>Leitarniðurstöður</h2>
     @if (Request.IsAuthenticated)
     {
-    <div class="uploadNewFile">
-        @Html.ActionLink("Upphala nýrri skrá", "uploadFile", "file")
-    </div>
+        <div class="uploadNewFile">
+            @Html.ActionLink("Upphala nýrri skrá", "uploadFile", "file")
+        </div>
     }
+    <h2>Leitarniðurstöður</h2>
     <table id="searchTable">
         <thead>
             <tr>
