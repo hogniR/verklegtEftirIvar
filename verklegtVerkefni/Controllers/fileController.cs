@@ -14,6 +14,9 @@ namespace verklegtVerkefni.Controllers
     public class fileController : Controller
     {
         filesRepository repository = new filesRepository();
+        // þetta fall gerir notenda kleift að upphala skrá. Það notar HttpPostedFileBase til
+        // að sækja skránna sem verið er að upphala og notar svo streamreader til þess að
+        // lesa skránna línu fyrir línu og setja inn í breytu sem er svo skilað í gagnagrunn 
         public ActionResult uploadFile()
         {
             return View(new files());
@@ -45,6 +48,9 @@ namespace verklegtVerkefni.Controllers
                 return View();
             }
         }
+        // þetta fall gerir notenda kleift að niðurhala skrá með því að smella á hlekk
+        // fyrir myndina eða þáttinn. Fallið tekur inn eina færibreytu sem er ID á myndinni
+        // eða þættinum. Það smíðar svo skrá úr strengnum í gagnagrunninum og skilar henni ut
         public FileStreamResult downloadFile(int? id)
         {
             var fileToDownload = repository.getFileById(id.Value);
@@ -55,6 +61,10 @@ namespace verklegtVerkefni.Controllers
 
             return File(stream, "text/plain", fileToDownload.name + "(" + fileToDownload.language + ")" + ".srt");
         }
+        // þetta fall skilar leitarniðurstöðum af leitarorði sem slegið er inn í 
+        // leitarboxið á forsíðunni. Það notar formcollection og ef leitarorðið er ekkert
+        // þá skilar þetta öllum skrám á síðunni en ef eitthvað er slegið inn er leitað
+        // af öllum skrám sem byrja á það sama og leitarorðið
         public ActionResult searchResults(FormCollection form)
         {
             search newItem = new search();
@@ -76,6 +86,8 @@ namespace verklegtVerkefni.Controllers
                 return View(result);
             }
         }
+        // kallað er á þetta fall í gegnum searchresult viewið í gegnum ajax scriptu.
+        // þetta nær í like fyrir ákveðinn file með ákveðnu ID-i og hækkar það um einn
         [HttpPost]
         public ActionResult addLike(int? id)
         {
@@ -89,6 +101,7 @@ namespace verklegtVerkefni.Controllers
             return View();
             
         }
+        // þetta fall skilar lista af 10 nýjustu skrám sem eru í gagnagrunninum
         public ActionResult listOfFiles()
         {
             IEnumerable<files> result = (from files in repository.getAllFiles()
@@ -96,6 +109,7 @@ namespace verklegtVerkefni.Controllers
                                          select files).Take(10);
             return View(result);
         }
+        // þetta fall skilar lista af 10 vinsælustu skrám í gagnagrunninum
         public ActionResult listOfPopular()
         {
             IEnumerable<files> result = (from files in repository.getAllFiles()
