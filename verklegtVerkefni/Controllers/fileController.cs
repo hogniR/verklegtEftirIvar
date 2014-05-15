@@ -68,8 +68,9 @@ namespace verklegtVerkefni.Controllers
             }
             else
             {
+                var search = newItem.searchTerms.ToLower();
                 IEnumerable<files> result = (from s in repository.getAllFiles()
-                                             where s.name.ToLower().StartsWith(newItem.searchTerms)
+                                             where s.name.ToLower().StartsWith(search)
                                              orderby s.name
                                              select s);
                 return View(result);
