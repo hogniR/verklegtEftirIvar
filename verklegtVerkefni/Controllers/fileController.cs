@@ -28,20 +28,25 @@ namespace verklegtVerkefni.Controllers
             
             if (uploadFile != null)
             {
-                string content = null;
-                using (StreamReader sr = new StreamReader(uploadFile.InputStream, Encoding.Default, true))
+                var type = uploadFile.ContentType;
+                if (type == "text/plain" || type == "application/octet-stream")
                 {
-                    string line;
-
-                    while ((line = sr.ReadLine()) != null)
+                    string content = null;
+                    using (StreamReader sr = new StreamReader(uploadFile.InputStream, Encoding.Default, true))
                     {
-                        content += line + "@";
+                        string line;
+
+                        while ((line = sr.ReadLine()) != null)
+                        {
+                            content += line + "@";
+                        }
                     }
+                    infoForFile.name = infoForFile.name.ToLower();
+                    infoForFile.content = content;
+                    repository.addNewFile(infoForFile);
+                    return RedirectToAction("Index", "Home");
                 }
-                infoForFile.name = infoForFile.name.ToLower();
-                infoForFile.content = content;
-                repository.addNewFile(infoForFile);
-                return RedirectToAction("Index", "Home");
+                return View();
             }
             else
             {
