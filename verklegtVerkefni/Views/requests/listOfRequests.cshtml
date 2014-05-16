@@ -27,7 +27,7 @@
                         {
                             <tr>
                                 <td>
-                                <div id="request">@Html.ActionLink(request.name, "viewRequest", new { id = request.id })</div>
+                                <span id="request">@Html.ActionLink(request.name, "viewRequest", new { id = request.id })</span>
                                 @if (request.deaf == true)
                                 {
                                     <img src="~/images/deaf.jpg" />
