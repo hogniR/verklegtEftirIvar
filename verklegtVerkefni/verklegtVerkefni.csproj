@@ -295,6 +295,7 @@
     <Content Include="Views\file\listOfFiles.cshtml" />
     <Content Include="Views\file\listOfPopular.cshtml" />
     <Content Include="Views\Shared\mostPopular.cshtml" />
+    <Content Include="Views\file\editFile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using verklegtVerkefni.Models;
@@ -14,7 +15,7 @@ namespace verklegtVerkefni.RepoClasses
         public void addNewFile(files newFile)
         {
             m_db.files.Add(newFile);
-            save();
+            m_db.SaveChanges();
             return;
         }
         // þetta fall skilar einni skrá með tilteknu ID-i
@@ -31,11 +32,13 @@ namespace verklegtVerkefni.RepoClasses
         {
             return m_db.files;
         }
-        // vistar gagnagrunninn
+        public void updateFile(files fileToUpdate)
+        {
+            m_db.SaveChanges();
+        }
         public void save()
         {
             m_db.SaveChanges();
-            return;
         }
     }
 }

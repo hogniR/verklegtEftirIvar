@@ -70,6 +70,27 @@ namespace verklegtVerkefni.Controllers
         // leitarboxið á forsíðunni. Það notar formcollection og ef leitarorðið er ekkert
         // þá skilar þetta öllum skrám á síðunni en ef eitthvað er slegið inn er leitað
         // af öllum skrám sem byrja á það sama og leitarorðið
+        [HttpGet]
+        public ActionResult editFile(int? id)
+        {
+            var result = repository.getFileById(id.Value);
+            if(result != null)
+            {
+                result.content = result.content.Replace("@", System.Environment.NewLine);
+                return View(result);
+            }
+            return View("Error");
+        }
+        [HttpPost]
+        public ActionResult editFile(int? id, FormCollection form)
+        {
+            files newItem = repository.getFileById(id.Value);
+            UpdateModel(newItem);
+            newItem.content = newItem.content.Replace(System.Environment.NewLine, "@");
+            newItem.content += "@";
+            repository.updateFile(newItem);
+            return RedirectToAction("searchResults");
+        }
         public ActionResult searchResults(FormCollection form)
         {
             search newItem = new search();
