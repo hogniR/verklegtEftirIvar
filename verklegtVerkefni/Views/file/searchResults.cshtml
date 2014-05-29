@@ -32,7 +32,7 @@
             {
                 <tr>
                     <td class="nameLength">
-                        <span id="request">@Html.ActionLink(files.name + " (" + files.language + ")", "editFile", new { id = files.id })</span>
+                        <span id="request">@files.name (@files.language)</span>
                         @if (files.deaf == true)
                         {
                             <img src="~/images/deaf.jpg" />
@@ -56,6 +56,12 @@
 
                     <td id="totalLikes_@files.id">
                         @files.likes<span id="like_@files.id" class="marginForLike"><a href="#" class="glyphicon glyphicon-thumbs-up" onclick="addLike(@files.id)" id="likeButton_@files.id"></a></span>
+                    </td>
+                    <td>
+                        @Html.ActionLink("Niðurhala skrá", "downloadFile", new { id = files.id })
+                    </td>
+                    <td>
+                        @Html.ActionLink("Breyta skrá", "editFile", new { id = files.id })
                     </td>
                 </tr>
             }
